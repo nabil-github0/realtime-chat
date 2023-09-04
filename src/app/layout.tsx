@@ -6,7 +6,7 @@ import Providers from '@/components/Providers'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Chat Unicorn',
+  title: 'Chat Goblin',
   description: 'Chat anywhere anytime',
 }
 
