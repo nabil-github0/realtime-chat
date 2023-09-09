@@ -1,5 +1,6 @@
 "use client"
 
+import Image from 'next/image'
 import { pusherClient } from '@/lib/pusher';
 import { chatHrefConstructor, toPusherKey } from '@/lib/utils';
 import { usePathname, useRouter } from 'next/navigation';
@@ -87,6 +88,14 @@ const SidebarChatList: FC<SidebarChatListProps> = ({friends, sessionId}) => {
                 className='text-gray-700 hover:text-indigo-600 hover:bg-gray-50 group flex items-center gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
                 href={`/dashboard/chat/${chatHrefConstructor(sessionId, friend.id)}`}
                 >
+                    <Image 
+                    referrerPolicy='no-referrer'
+                    src={friend.image} 
+                    width={30} 
+                    height={30} 
+                    className='rounded-full' 
+                    alt={friend.name} 
+                    />
                     {friend.name}
                     {unseenMessagesCount > 0 ? (
                         <div className='bg-indigo-600 font-medium text-xs text-white h-4 w-4 rounded-full flex justify-center items-center'>
