@@ -47,7 +47,7 @@ const SidebarChatList: FC<SidebarChatListProps> = ({friends, sessionId}) => {
                 senderMessage={message.text}
                 senderName={message.senderName}
                 />), {
-                    duration: 5000,
+                    duration: 10000,
                 })
 
             setUnseenMessages((prev) => [...prev, message])
