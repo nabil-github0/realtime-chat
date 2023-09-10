@@ -33,6 +33,9 @@ const page = async ({params}: PageProps) => {
 
     const { chatId } = params;
 
+    const session = await getServerSession(authOptions)
+    if (!session) notFound()
+
     const { user } = session
     const [ userId1, userId2 ] = chatId.split("--")
 
