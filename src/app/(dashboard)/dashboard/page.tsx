@@ -22,6 +22,8 @@ const page = async ({}) => {
         friends.map(async (friend) => {
             const [lastMessageRaw] = (await fetchRedis("zrange", `chat:${chatHrefConstructor(session.user.id, friend.id)}:messages`, -1 , -1)) as string[]
 
+            console.log(lastMessageRaw)
+
             const lastMessage = JSON.parse(lastMessageRaw) as Message
 
             console.log(lastMessage)
