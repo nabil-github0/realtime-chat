@@ -12,7 +12,9 @@ const page = async ({}) => {
 
     const session = await getServerSession(authOptions)
 
-    if(!session) notFound()
+    if(!session) {
+        return notFound()
+    }
 
     const friends = await getFriendsByUserId(session.user.id)
 
