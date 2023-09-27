@@ -37,7 +37,7 @@ const Messages: FC<MessagesProps> = ({ initialMessages, sessionId, chatId, sessi
     const scrollDownRef = useRef<HTMLDivElement | null>(null)
 
     const formatTimestamp = (timestamp: number) => {
-        return format(timestamp,"hh:mm a")
+        return format(timestamp,"h:mm a M-d-yy")
     }
 
     return (
